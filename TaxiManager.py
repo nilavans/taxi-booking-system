@@ -77,7 +77,7 @@ class TaxiManager:
         booking_id = generate_id('BTX')
         amount = self.calculate_travel_fare(pickup_point, drop_point, routes)
         new_booking = BookTaxi(booking_id, allocated_taxi.taxi_id, customer_name, pickup_point, drop_point, pickup_time, drop_time, amount)
-        self.bookings[new_booking] = None
+        self.bookings[new_booking] = new_booking
         allocated_taxi.earnings+=amount
         print(f'Hey {customer_name}, your booking is confirmed and your booking id: {booking_id}')
         return True
